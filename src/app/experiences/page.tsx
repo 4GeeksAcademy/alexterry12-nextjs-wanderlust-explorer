@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { experiences } from "@/data/experiences";
 import ExperienceExplorer from "@/components/ExperienceExplorer";
 
@@ -16,7 +17,9 @@ export default function ExperiencesPage() {
         </p>
       </section>
 
-      <ExperienceExplorer experiences={experiences} />
+      <Suspense fallback={null}>
+        <ExperienceExplorer experiences={experiences} />
+      </Suspense>
     </main>
   );
 }
