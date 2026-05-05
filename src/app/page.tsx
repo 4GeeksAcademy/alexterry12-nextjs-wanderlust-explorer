@@ -27,30 +27,28 @@ export default function HomePage() {
         />
 
         <div className="relative z-10 flex min-h-screen w-full items-center justify-center px-6 text-center">
-          <div className="mx-auto flex w-full max-w-5xl flex-col items-center justify-center text-center text-white">
-            <p className="mb-7 text-xs uppercase tracking-[0.42em] text-white/88">
+          <div className="mx-auto flex min-w-0 w-full max-w-5xl flex-col items-center justify-center text-center text-white">
+            <p className="hero-reveal hero-reveal-eyebrow mb-7 text-xs uppercase tracking-[0.42em] text-white/88">
               CURATED · CRAFTED · UNFORGETTABLE
             </p>
-            <div className="relative mx-auto mb-3 w-fit px-8">
+            <div className="relative mx-auto mb-3 w-full max-w-[min(96vw,56rem)] px-4 sm:px-8">
               <div className="hero-scan-line" aria-hidden="true" />
-              <h1 className="hero-headline font-[var(--font-geist-sans)] text-[clamp(2rem,7vw,5.5rem)] font-semibold uppercase leading-[0.95] md:text-[clamp(2.5rem,7.5vw,6.5rem)]">
-                {headline.split("").map((char, index) => (
-                  <span
-                    key={`${char}-${index}`}
-                    className="hero-headline-letter"
-                    style={{ animationDelay: `${index * 50}ms` }}
-                  >
-                    {char === " " ? "\u00A0" : char}
-                  </span>
-                ))}
+              <h1
+                className="hero-headline hero-reveal hero-reveal-heading mx-auto block w-full max-w-[16ch] break-normal [overflow-wrap:normal] bg-gradient-to-b from-white to-white/85 bg-clip-text px-1 font-[var(--font-geist-sans)] font-extrabold uppercase leading-[0.95] tracking-tight text-transparent"
+                style={{
+                  fontSize: "clamp(2rem, 8.8vw, 5.5rem)",
+                  textShadow: "0 2px 20px rgba(0,0,0,0.3), 0 0 60px rgba(255,45,149,0.15)",
+                }}
+              >
+                {headline}
               </h1>
             </div>
-            <p className="mx-auto mt-7 max-w-2xl text-base font-light text-white/90 md:text-xl">
+            <p className="hero-reveal hero-reveal-description mx-auto mt-7 max-w-2xl text-base font-light text-white/90 md:text-xl">
               Discover 100 carefully curated experiences from every corner of the world.
             </p>
             <Link
               href="/experiences"
-              className="accent-glow mt-10 inline-flex rounded-full bg-[#ff2d95] px-8 py-4 text-sm font-semibold uppercase tracking-[0.2em] text-white shadow-[0_0_24px_rgba(255,45,149,0.42)] hover:bg-[#ff4aa6]"
+              className="hero-reveal hero-reveal-cta accent-glow mt-10 inline-flex rounded-full bg-[#ff2d95] px-8 py-4 text-sm font-semibold uppercase tracking-[0.2em] text-white shadow-[0_0_24px_rgba(255,45,149,0.42)] hover:bg-[#ff4aa6]"
             >
               Browse Experiences
             </Link>

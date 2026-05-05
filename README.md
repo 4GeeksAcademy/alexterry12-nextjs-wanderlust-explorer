@@ -103,11 +103,4 @@ Happy exploring! 🌍
 
 ## Hero Video
 
-Add these 4 videos to `public/videos/`:
-
-- herovideo1.mp4
-- herovideo2.mp4
-- herovideo3.mp4
-- herovideo4.mp4
-
-Combine all 4 videos to play in sequence as a single looping hero video. Use these exact filenames. Make it high-tech and immersive.
+Add `travel.mp4` to `public/` and use it as the looping muted background on the home hero section.

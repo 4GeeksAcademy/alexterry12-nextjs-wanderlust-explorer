@@ -71,7 +71,18 @@ main {
     letter-spacing: 0.15em;
   }
   100% {
-    letter-spacing: 0.02em;
+    letter-spacing: -0.02em;
+  }
+}
+
+@keyframes hero-fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -116,15 +127,31 @@ main {
 
 .hero-headline {
   animation: hero-track-in 900ms ease-out forwards, hero-glow-pulse 3.4s ease-in-out 1s infinite;
-  letter-spacing: 0.02em;
+  letter-spacing: -0.02em;
+  word-break: normal;
+  overflow-wrap: normal;
 }
 
-.hero-headline-letter {
-  display: inline-block;
+.hero-reveal {
   opacity: 0;
-  filter: blur(10px);
-  transform: translateY(16px) scale(0.96);
-  animation: hero-letter-in 760ms ease-out forwards;
+  transform: translateY(16px);
+  animation: hero-fade-up 800ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.hero-reveal-eyebrow {
+  animation-delay: 80ms;
+}
+
+.hero-reveal-heading {
+  animation-delay: 180ms;
+}
+
+.hero-reveal-description {
+  animation-delay: 320ms;
+}
+
+.hero-reveal-cta {
+  animation-delay: 440ms;
 }
 
 .hero-scan-line {
