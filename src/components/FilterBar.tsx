@@ -31,8 +31,8 @@ export default function FilterBar({
               onClick={() => onCategoryChange(item)}
               className={`rounded-full border px-4 py-2 text-sm font-medium transition ${
                 isActive
-                  ? "bg-[var(--accent)] text-white border-[var(--accent)]"
-                  : "bg-white text-[var(--foreground)] border border-[var(--card-border)] hover:border-[var(--accent)] hover:text-[var(--accent)]"
+                  ? "bg-[var(--accent)] text-white border-[var(--accent)] shadow-[0_0_16px_rgba(255,45,149,0.4)]"
+                  : "bg-white text-zinc-900 border border-[var(--card-border)] hover:border-[var(--accent)] hover:text-[var(--accent)]"
               }`}
             >
               {label}
@@ -49,7 +49,7 @@ export default function FilterBar({
           id="destination-filter"
           value={destination}
           onChange={(event) => onDestinationChange(event.target.value)}
-          className="w-full rounded-full border border-[var(--card-border)] bg-white px-5 py-3 text-sm text-[var(--foreground)] shadow-sm outline-none transition focus:border-[var(--accent)] focus:ring-4 focus:ring-[rgba(15,118,110,0.16)]"
+          className="w-full rounded-full border border-[var(--card-border)] bg-white px-5 py-3 text-sm text-zinc-900 shadow-[0_12px_28px_rgba(0,0,0,0.3)] outline-none transition focus:border-[var(--accent)] focus:ring-4 focus:ring-[rgba(255,45,149,0.2)]"
         >
           <option value="">All destinations</option>
           {destinations.map((item) => (

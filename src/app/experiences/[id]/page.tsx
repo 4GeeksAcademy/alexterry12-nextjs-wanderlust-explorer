@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { experiences } from "@/data/experiences";
+import RevealOnScroll from "@/components/RevealOnScroll";
 
 interface ExperienceDetailPageProps {
   params: Promise<{ id: string }>;
@@ -21,7 +22,7 @@ export default async function ExperienceDetailPage({ params }: ExperienceDetailP
   if (!experience) {
     return (
       <main className="max-w-5xl mx-auto px-6 py-12">
-        <div className="rounded-3xl bg-white border border-[var(--card-border)] p-8 shadow-sm">
+        <RevealOnScroll className="rounded-3xl border border-[var(--card-border)] bg-white p-8 shadow-[0_14px_32px_rgba(0,0,0,0.12)]">
           <p className="text-sm uppercase tracking-[0.32em] text-[var(--muted)] mb-4">
             Experience Not Found
           </p>
@@ -33,18 +34,18 @@ export default async function ExperienceDetailPage({ params }: ExperienceDetailP
           </p>
           <Link
             href="/experiences"
-            className="inline-flex rounded-full bg-[var(--accent)] px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white transition-colors hover:bg-[#0d6a5f]"
+            className="accent-glow inline-flex rounded-full bg-[var(--accent)] px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white"
           >
             Back to all experiences
           </Link>
-        </div>
+        </RevealOnScroll>
       </main>
     );
   }
 
   return (
     <main className="max-w-5xl mx-auto px-6 py-12">
-      <div className="space-y-8">
+      <RevealOnScroll className="space-y-8">
         <img
           src={experience.imageUrl}
           alt={experience.title}
@@ -55,7 +56,7 @@ export default async function ExperienceDetailPage({ params }: ExperienceDetailP
           <p className="text-xs uppercase tracking-[0.35em] text-[var(--muted)]">
             {experience.category}
           </p>
-          <h1 className="text-5xl font-[var(--font-serif)] font-semibold tracking-tight text-[var(--foreground)]">
+          <h1 className="text-5xl font-semibold uppercase tracking-[0.04em] text-[var(--foreground)]">
             {experience.title}
           </h1>
           <p className="text-base text-[var(--muted)]">{experience.destination}</p>
@@ -79,11 +80,11 @@ export default async function ExperienceDetailPage({ params }: ExperienceDetailP
 
         <Link
           href="/experiences"
-          className="inline-flex rounded-full bg-[var(--accent)] px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white transition-colors hover:bg-[#0d6a5f]"
+          className="accent-glow inline-flex rounded-full bg-[var(--accent)] px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white"
         >
           Back to all experiences
         </Link>
-      </div>
+      </RevealOnScroll>
     </main>
   );
 }

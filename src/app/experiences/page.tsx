@@ -9,7 +9,7 @@ export default function ExperiencesPage() {
         <p className="text-sm uppercase tracking-[0.28em] text-[var(--muted)] mb-4">
           Curated travel discoveries
         </p>
-        <h1 className="text-5xl sm:text-6xl font-[var(--font-serif)] font-semibold tracking-tight text-[var(--foreground)] mb-4">
+        <h1 className="text-5xl sm:text-6xl font-semibold uppercase tracking-[0.04em] text-[var(--foreground)] mb-4">
           Explore
         </h1>
         <p className="max-w-2xl text-lg leading-8 text-[var(--muted)]">
